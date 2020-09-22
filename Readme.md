@@ -2,8 +2,7 @@
 
 This allows you to see the content of the IntelliJ (or Android Studio) cache. It has only been tested with AS 4.0 and IJ 2020.*.
 
-[Screenshot of Viewer]
-(https://raw.githubusercontent.com/brianduff/ijcv/master/screenshot.png)
+<img src="https://raw.githubusercontent.com/brianduff/ijcv/master/screenshot.png" />
 
 ## Building
 
