@@ -6,7 +6,7 @@ This allows you to see the content of the IntelliJ (or Android Studio) cache. It
 
 ## Building
 
-You'll need bazel. bazel.io has instructions for installing. On my mac, I just:
+You'll need (bazel)[bazel.io]. To install on my mac, I just:
 
 ```
 brew install bazel
