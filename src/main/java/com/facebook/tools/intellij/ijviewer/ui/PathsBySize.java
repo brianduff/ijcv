@@ -4,6 +4,5 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 
 public class PathsBySize extends JPanel {
-  private final JTable table;
-
+  private final JTable table = null;
 }

@@ -123,17 +123,12 @@ public class IjViewer {
   }
 
   public static void main(String[] args) throws IOException {
-    File cacheDir = new File("/Users/bduff/Library/Caches/AndroidStudio4.0/caches/");
-    // File cacheDir = new
-    // File("/Users/bduff/Library/Caches/JetBrains/IdeaIC2020.1/caches/");
+    // File cacheDir = new File("/Users/" + System.getProperty("user.name") + "/Library/Caches/AndroidStudio4.0/caches/");
+    File cacheDir = new
+    File("/Users/bduff/Library/Caches/JetBrains/IdeaIC2020.1/caches/");
 
     IjViewer viewer = IjViewer.forCacheDir(cacheDir);
     new UI(viewer).show();
-
-    // Read the first five files.
-    for (int i = 1; i < 100; i++) {
-      int nameId = viewer.records.getRecordInt(i, Records.NAME_OFFSET);
-    }
   }
 
   public class Attribs {
