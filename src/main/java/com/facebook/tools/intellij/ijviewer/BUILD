@@ -1,7 +1,7 @@
 java_library(
     name = "ijviewer",
-    srcs = glob(["*.java"]),
-    resources = glob(["*.png"]),
+    srcs = glob(["**/*.java"]),
+    resources = glob(["**/*.png"]),
     deps = [
         "//lib:intellij"
     ]

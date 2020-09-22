@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
+import com.facebook.tools.intellij.ijviewer.ui.UI;
 import com.intellij.util.concurrency.SequentialTaskExecutor;
 import com.intellij.util.io.DataInputOutputUtil;
 import com.intellij.util.io.IOUtil;
@@ -27,11 +28,11 @@ import com.intellij.util.io.storage.Storage;
 
 public class IjViewer {
 
-  final Records records;
-  final PersistentStringEnumerator names;
-  final Attribs attribs;
-  final AttribEnum attribEnum;
-  final CustomRefCountingStorage content;
+  public final Records records;
+  public final PersistentStringEnumerator names;
+  public final Attribs attribs;
+  public final AttribEnum attribEnum;
+  public final CustomRefCountingStorage content;
 
   public IjViewer(ResizeableMappedFile records, PersistentStringEnumerator names, Storage attribs,
       AttribEnum attribEnum, CustomRefCountingStorage content) {
@@ -86,7 +87,7 @@ public class IjViewer {
     return new IjViewer(records, names, attribStorage, attribEnum, contents);
   }
 
-  static class CustomRefCountingStorage extends RefCountingStorage {
+  public static class CustomRefCountingStorage extends RefCountingStorage {
     CustomRefCountingStorage(File contentsFile) throws IOException {
       super(contentsFile.getPath(), CapacityAllocationPolicy.FIVE_PERCENT_FOR_GROWTH, false);
     }
@@ -135,7 +136,7 @@ public class IjViewer {
     }
   }
 
-  class Attribs {
+  public class Attribs {
     private static final int MAX_SMALL_ATTR_SIZE = 64;
 
     private final Storage storage;
@@ -185,7 +186,7 @@ public class IjViewer {
     }
   }
 
-  static class Records {
+  public static class Records {
     private final ResizeableMappedFile records;
 
     Records(ResizeableMappedFile records) {
@@ -211,14 +212,14 @@ public class IjViewer {
 
     private static final int RECORD_SIZE = LENGTH_OFFSET + LENGTH_SIZE;
 
-    static final int CHILDREN_CACHED_FLAG = 0x01;
-    static final int IS_DIRECTORY_FLAG = 0x02;
-    static final int IS_READ_ONLY = 0x04;
-    static final int MUST_RELOAD_CONTENT = 0x08;
-    static final int IS_SYMLINK = 0x10;
-    static final int IS_SPECIAL = 0x20;
-    static final int IS_HIDDEN = 0x40;
-    static final int FREE_RECORD_FLAG = 0x100;
+    public static final int CHILDREN_CACHED_FLAG = 0x01;
+    public static final int IS_DIRECTORY_FLAG = 0x02;
+    public static final int IS_READ_ONLY = 0x04;
+    public static final int MUST_RELOAD_CONTENT = 0x08;
+    public static final int IS_SYMLINK = 0x10;
+    public static final int IS_SPECIAL = 0x20;
+    public static final int IS_HIDDEN = 0x40;
+    public static final int FREE_RECORD_FLAG = 0x100;
 
     private int getRecordInt(int id, int offset) {
       return records.getInt(getOffset(id, offset));

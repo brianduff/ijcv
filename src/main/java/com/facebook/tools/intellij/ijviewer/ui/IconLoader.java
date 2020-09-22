@@ -1,4 +1,4 @@
-package com.facebook.tools.intellij.ijviewer;
+package com.facebook.tools.intellij.ijviewer.ui;
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -9,7 +9,7 @@ import java.util.Optional;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class IconLoader {
+final class IconLoader {
   private Map<String, Optional<Icon>> cache = new HashMap<>();
 
   public Optional<Icon> getIcon(String name) {
@@ -18,7 +18,7 @@ public class IconLoader {
       return result;
     }
 
-    String fileName = name + ".png";
+    String fileName = "image/" + name + ".png";
 
     Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource(fileName));
     result = Optional.of(new ImageIcon(image));
